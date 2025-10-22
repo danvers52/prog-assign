@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+    <div class="site-container">
+        <header class="main-header">
+            <div class="item">
+                <div class="text">
+                    <h1 class="Glowing">Welcome to My Website</h1>
+                    <h2 class="SubtleHighLight"></h2>
+                    <h2 class="SubtleHighLight"></h2>
+                    <h2 class="SubtleHighLight"></h2>
+                </div>
+            </div>   
+        </header>
+
+        <main> <section class="content" class="content-section">
+                <div class="heading"><h2 class="PageHeading">Home</h2></div>
+                <h3>Content</h3>
+                <div class="line-divider"></div>
+                <div class="content-wrapper">
+                    <p>This is a website for assignment PROGT1A which I procastinated
+                        and now I only have one week to finish everything! The horror! The 
+                        consequences of my actions!</p>
+                    <p class="price">Free.99</p>
+                    <p class="green">#1 Best Seller!</p>
+                    <div class="cart-container"><a><button class="cartBtn" data-id="1" data-name="Procastination!" data-price="0.00">Add to Cart!</button></a>
+                    <span id="cartCount">0</span></div>
+                    <div class="return-link"><a href="./page.html">Go back to Home</a></div>
+                    <div class="cart-return"><a href="#cart">Shopping Cart</a></div>
+                </div> 
+            </section>
+
+            <section id="about" class="content">
+                <div class="heading"><h2 class="PageHeading">About Us</h2></div>
+                <h3 class="Underline">Established</h3>
+                <div class="line-divider"></div>
+                <div class="content-wrapper">
+                    <p>This website started because the founder enrolled at an institution called
+                        iStudent Academy for the course Software Engineer. The founder always had a 
+                        likeness for code, and when her mother found it... It was all over! Now the 
+                        founder has to pursue a whole career in coding when that was never part of their 
+                        plan!</p>
+                    <p>The founder's name is Tara Laughton. She is 20 years old and still lives with her 
+                        parents in Kraaifontein after seven years of living in Cape Town.</p>
+                    <div class="return-link"><a href="./page.html">Go back to Home</a></div>
+                </div>
+            </section>
+
+            <section id="contact" class="content">
+                <div class="heading"><h2 class="PageHeading">Contact Details</h2></div>
+                <div class="line-divider"></div>
+                <div class="content-wrapper">
+                    <p>You can contact the founder via the following methods:</p>
+                    <ul>
+                        <li class="phone">Tel no: +27 84 624 2703</li>
+                        <li class="email-main">Email: laughtontara@gmail.com</li>
+                        <li class="email-sec">School: taralaughton03@gmail.com</li>
+                    </ul>
+                    <div class="return-link"><a href="./page.html">Go back to Home</a></div>
+                </div>
+            </section>
+
+            <section id="cart" class="content">
+                <div class="heading"><h3 class="PageHeading">Shopping Cart</h3></div>
+                <div class="line-divider"></div>
+                <div class="content-wrapper">
+                    <p>Please review your items before checking out.</p>
+                    <div class="cart-container">
+                        <div class="items-container"></div>
+                            <div class="cart-item" data-product-id="1">
+                                <strong>Procastination!</strong> - Free.99 x 1
+                                <button class="increase-quantity-btn" data-product-id="1">+</button>
+                                <button class="decrease-quantity-btn" data-product-id="1">-</button>
+                                <button class="remove-item-btn" data-product-id="1">Remove</button>
+                            </div>
+                        <h5><span id="cart-total">R 0.00</span></h5>
+                        <button id="checkout">Proceed to Checkout</button>
+                    </div>
+                    <div id="notification" class="notification"></div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="copy"><p>&copy; Website: Tara</p></footer>    
+        <ul class="end-page"><li><a href="./page.html">Go back to Home</a></li></ul>
+
+        <script>
+           document.addEventListener("DOMContentLoaded", function() {
+            const addToCartBtn = document.getElementById("add-to-cart");
+            const cartCountDisplay = document.getElementById("cartCount");
+
+            if (addToCartBtn && cartCountDisplay) {
+                let cartCount = 0;
+                addToCartBtn.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    cartCount++;
+                    cartCountDisplay.textContent = cartCount;
+                });
+            } else {
+                console.warn("Add to Cart button or cartCount span was not found");
+            }
+           });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script src="cart.js"></script>
+        <script src="shop.js"></script>
+    
+    </div>
+</body>
+</html>
